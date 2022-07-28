@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import BarChart from "./components/BarChart";
+import Map from "./components/Map";
+import { useState } from "react";
+// import RacingBarChart from "./components/RacingBarChart";
 
 function App() {
+  const [data, setData] = useState([25, 30, 45, 60, 85, 65, 75]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="everything">
+      <div>
+        <h1>Spaghetti Map.</h1>
+      </div>
+      <div className="container">
+        <Map />
+        <BarChart data={data} setData={setData} />
+      </div>
     </div>
   );
 }
